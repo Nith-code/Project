@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Cambodia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2a2a72;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        .logo {
+            max-width: 100px;
+            height: auto;
+        }
+        nav {
+            background-color: #343463;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        nav li {
+            display: inline;
+            margin: 0 15px;
+            position: relative;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #343463;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #2a2a72;
+        }
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            color: #2a2a72;
+        }
+        p {
+            line-height: 1.6;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #2a2a72;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #343463;
+        }
+        #confirmationMessage {
+            margin-top: 10px;
+            color: #2a2a72;
+            font-weight: bold;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img class="logo" src="/Photo/Kitlogo.png" alt="University Logo">
+        <h1>Welcome to the Kirirom Institute Of Technology</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="javascript:void(0)">Programs</a>
+                <div class="dropdown-content">
+                    <a href="#">Bachelor's Degrees</a>
+                    <a href="#">Master's Degrees</a>
+                    <a href="#">Ph.D. Programs</a>
+                </div>
+            </li>
+            <li><a href="#">Admissions</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <img src="/Test/Photo/Kitmain.png" alt="University of Cambodia Campus" style="margin: 0 auto; display: block;">
+        <h2>About Us</h2>
+        <p>The University of Cambodia is a leading institution of higher education in Cambodia. We offer a wide range of academic programs, world-class faculty, and a commitment to excellence in education.</p>
+        
+        <h2>Academic Programs</h2>
+        <ul>
+            <li>Bachelor's Degrees</li>
+            <li>Master's Degrees</li>
+            <li>Ph.D. Programs</li>
+        </ul>
+        
+        <h2>Admissions</h2>
+        <p>If you are interested in joining our university, please visit our <a href="#">Admissions</a> page for more information.</p>
+
+        <h2>Our Campus</h2>
+        <img src="/Test/Photo/kirirom.jpg" alt="University Campus" style="margin: 0 auto; display: block;">
+        <p>Our university campus is located in the heart of Phnom Penh, providing a vibrant and conducive environment for learning. We have state-of-the-art facilities, libraries, and student centers to support your academic journey.</p>
+        
+        <h2>Student Life</h2>
+        <img src="/Test/Photo/kitstudent.jpg" alt="Student Life" style="margin: 0 auto; display: block;">
+        <p>We believe in holistic development. Apart from academics, our university offers a variety of clubs, sports, and extracurricular activities to enrich your university experience.</p>
+        
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need assistance, please don't hesitate to contact us.</p>
+        
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <input type="submit" value="Submit">
+        </form>
+        
+        <div id="confirmationMessage"></div>
+    </div>
+
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            confirmationMessage.textContent = 'Thank you for your inquiry. We will get in touch with you soon.';
+            contactForm.reset();
+        });
+    </script>
+</body>
+</html>
